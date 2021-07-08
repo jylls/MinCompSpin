@@ -114,16 +114,16 @@ int main()
 // ***      -->  Op = 3               Integer representation   ( 000000011 = 3 )
 
   // *** The basis can be specified by hand here:
-  uint32_t Basis_Choice[] = {36, 10, 3, 272, 260, 320, 130, 65, 4};    // Ex. This is the best basis for the USSC dataset
+  //uint32_t Basis_Choice[] = {36, 10, 3, 272, 260, 320, 130, 65, 4};    // Ex. This is the best basis for the USSC dataset
 
-  unsigned int m = sizeof(Basis_Choice) / sizeof(uint32_t);
-  list<uint32_t> Basis_li;  Basis_li.assign (Basis_Choice, Basis_Choice + m); 
+  //unsigned int m = sizeof(Basis_Choice) / sizeof(uint32_t);
+  //list<uint32_t> Basis_li;  Basis_li.assign (Basis_Choice, Basis_Choice + m); 
 
   // *** Basis can also be read from a file:
   // list<uint32_t> Basis_li = Read_BasisOp_IntegerRepresentation();
 
   // *** Or one can use the original basis:
-  // list<uint32_t> Basis_li = Original_Basis();
+  list<uint32_t> Basis_li = Original_Basis();
 
   // *** Print info about the Basis:
   PrintTerm_Basis(Basis_li);
@@ -175,7 +175,7 @@ int main()
   cout << endl << "*******************************************************************************************" << endl;
 
 // *** Search among all MCM based on the r first basis operators (models of rank exactly equal to `r`):
-  int r=9;
+  int r=8;
   double LogE_BestMCM = 0;
   map<uint32_t, uint32_t> MCM_Partition = MCM_GivenRank_r(Kset, r, N, &LogE_BestMCM);
 //cout << "\t Best LogE = " << LogE_BestMCM << endl;

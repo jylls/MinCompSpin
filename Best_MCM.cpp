@@ -1,6 +1,6 @@
 #include <map>
 #include <fstream>
-
+#include <bitset>
 #include "data.h"
 
 /******************************************************************************/
